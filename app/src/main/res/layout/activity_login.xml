@@ -94,12 +94,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Remember me"
-                    android:layout_centerVertical="true"
-                    android:alpha="0.7"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -148,6 +142,15 @@
                     android:src="@drawable/instagram"
                     android:layout_margin="12dp"/>
             </LinearLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+            <TextView
+                android:id="@+id/createNewAccountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Create new account" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
