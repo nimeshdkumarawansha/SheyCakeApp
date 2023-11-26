@@ -71,7 +71,7 @@ tools:context=".RegisterActivity">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/done_icon"
+            android:drawableEnd="@drawable/person_icon"
             android:inputType="text" />
 
         <View
@@ -88,7 +88,7 @@ tools:context=".RegisterActivity">
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/done_icon"
+            android:drawableEnd="@drawable/mail_icon"
             android:inputType="textEmailAddress" />
 
         <View
