@@ -5,4 +5,6 @@
 
     <color name="my_primary">#5E35B1</color>
     <color name="my_secondary">#7E57C2</color>
+    <color name="my_ash">#EAEAEA</color>
+    <color name="banner_color">#9B83C5</color>
 </resources>

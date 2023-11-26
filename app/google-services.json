@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "12841409184",
+    "project_id": "sheycakeapp",
+    "storage_bucket": "sheycakeapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12841409184:android:1c2c51e0337430404347c5",
+        "android_client_info": {
+          "package_name": "com.orcs.sheycakeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12841409184-96nql69i0uojbf2a39g4ivg4kn0td04j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.orcs.sheycakeapp",
+            "certificate_hash": "3aaeac28b1a6c10584da7722436d3b96d98cd8b9"
+          }
+        },
+        {
+          "client_id": "12841409184-fnhbacp2d8dctop035cfcmm6gk8spccr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyn0LQf_Q-MXrj59OGn6LEtQLfISJ6K60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12841409184-0sdgr778e0jetlu1dngdl52cvqqstc5v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".LoginActivity">
+    tools:context=".Activity.LoginActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -107,7 +107,7 @@
                 android:layout_height="10dp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="LOGIN" />
@@ -126,16 +126,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center">
+
                 <ImageView
+                    android:id="@+id/buttonGoogle"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/google"
-                    android:layout_margin="12dp"/>
+                    android:layout_margin="12dp"
+                    android:src="@drawable/google" />
+
                 <ImageView
+                    android:id="@+id/buttonFacebook"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/facebook"
-                    android:layout_margin="12dp"/>
+                    android:layout_margin="12dp"
+                    android:src="@drawable/facebook" />
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"

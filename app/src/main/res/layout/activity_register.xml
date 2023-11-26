@@ -6,7 +6,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@drawable/bg"
-tools:context=".RegisterActivity">
+tools:context=".Activity.RegisterActivity">
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -69,9 +69,10 @@ tools:context=".RegisterActivity">
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/inputName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/done_icon"
+            android:drawableEnd="@drawable/person_icon"
             android:inputType="text" />
 
         <View
@@ -86,9 +87,10 @@ tools:context=".RegisterActivity">
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/inputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/done_icon"
+            android:drawableEnd="@drawable/mail_icon"
             android:inputType="textEmailAddress" />
 
         <View
@@ -103,6 +105,7 @@ tools:context=".RegisterActivity">
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/inputMobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/done_icon"
@@ -119,6 +122,7 @@ tools:context=".RegisterActivity">
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/eye_icon"
@@ -141,7 +145,7 @@ tools:context=".RegisterActivity">
             android:layout_height="10dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register" />
