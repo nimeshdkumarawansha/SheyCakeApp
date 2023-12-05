@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".Activity.MainActivity">
 
     <ScrollView
@@ -67,6 +69,7 @@
                     android:background="@drawable/search_backgorund"
                     android:drawableStart="@drawable/search_icon"
                     android:ems="10"
+                    android:drawablePadding="8dp"
                     android:hint=" Search ..."
                     android:inputType="text"
                     android:paddingStart="15dp"
