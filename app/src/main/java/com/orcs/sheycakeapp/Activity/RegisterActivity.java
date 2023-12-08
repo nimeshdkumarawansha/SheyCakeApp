@@ -86,7 +86,21 @@ public class RegisterActivity extends AppCompatActivity {
             }
 
             private void saveUserDataToFirestore(String name, String email, String mobile) {
-                // Your existing code for saving user data to Firestore
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                String userId = firebaseAuth.getCurrentUser().getUid();
+
+                // Create a user object with the required fields
+                Map<String, Object> user = new HashMap<>();
+                user.put("name", name);
+                user.put("email", email);
+                user.put("mobile", mobile);
+
+                // Add the user to the "users" collection in Firestore
+                db.collection("users").document(userId)
+                        .set(user)
+                        .addOnSuccessListener(documentReference -> Log.i(TAG, "User data added to Firestore"))
+                        .addOnFailureListener(e -> Log.e(TAG, "Error adding user data to Firestore", e));
             }
 
             private void clearInputFields() {
