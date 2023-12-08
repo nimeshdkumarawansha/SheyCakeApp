@@ -30,6 +30,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // login function
+        findViewById(R.id.buttonLogin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         //  move register activity
         findViewById(R.id.createNewAccountText).setOnClickListener(new View.OnClickListener() {
             @Override
