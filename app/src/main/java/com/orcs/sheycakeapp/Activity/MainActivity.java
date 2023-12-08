@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
 
-        firebaseFirestore.collection("categories")
+        firebaseFirestore.collection("products")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -50,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
 
-                                Map<String, Object> categories = document.getData();
+                                Map<String, Object> products = document.getData();
 
                                 LinearLayout linearLayoutCart = findViewById(R.id.productList);
                                 LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
                                 View view1 = inflater.inflate(R.layout.fragment_category_view, null);
 
-                                for (Map.Entry<String, Object> entry : categories.entrySet()) {
+                                for (Map.Entry<String, Object> entry : products.entrySet()) {
                                     if (entry.getKey().equals("name")) {
                                         TextView textView = view1.findViewById(R.id.textView8);
                                         textView.setText(entry.getValue().toString());
@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        // Set the text of textView3 to the user's email
         TextView textView3 = findViewById(R.id.textView3);
         if (textView3 != null) {
             textView3.setText("Welcome, " + mAuth.getCurrentUser().getEmail());
