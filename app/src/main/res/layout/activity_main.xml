@@ -180,7 +180,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/recyclerViewCategoryList" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewCategoryPopularList"
+                    android:id="@+id/bottomCartIcon"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="100dp"
@@ -246,6 +246,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/profileButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -268,6 +269,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/supportButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -290,6 +292,7 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/settingButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

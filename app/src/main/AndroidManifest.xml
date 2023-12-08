@@ -13,10 +13,10 @@
         android:theme="@style/Theme.SheyCakeApp"
         tools:targetApi="31">
         <activity
-            android:name=".CartListActivity"
+            android:name=".Activity.CartListActivity"
             android:exported="false" />
         <activity
-            android:name=".ShowDetailsActivity"
+            android:name=".Activity.ShowDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".ShowDeatilsActivity"
