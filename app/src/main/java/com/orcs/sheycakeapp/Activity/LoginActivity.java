@@ -17,10 +17,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.orcs.sheycakeapp.R;
 
+import java.util.Properties;
+
 public class LoginActivity extends AppCompatActivity {
     public static final String TAG = LoginActivity.class.getName();
     private FirebaseAuth mAuth;
     private EditText emailEditText, passwordEditText;
+    Properties properties = new Properties();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,10 +82,10 @@ public class LoginActivity extends AppCompatActivity {
                             // Redirect to home page
                             redirectToHomePage();
 
-                            // You can access user details using mAuth.getCurrentUser()
-                            // For example, to get the user's email:
                             String userEmail = mAuth.getCurrentUser().getEmail();
                             Log.i(TAG, "User email: " + userEmail);
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.i(TAG, "signInWithEmail:failure");
@@ -101,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
     private void redirectToHomePage() {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
-        finish(); // Optional: Close the LoginActivity to prevent going back to it using the back button
+        finish();
     }
 
 }
