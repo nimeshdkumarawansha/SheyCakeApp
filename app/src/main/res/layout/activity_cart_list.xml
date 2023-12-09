@@ -54,7 +54,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/totalAmountText"
+                    android:id="@+id/subTotalAmountText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs 0.00"
@@ -71,7 +71,6 @@
                 android:paddingRight="16dp">
 
                 <TextView
-                    android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -81,7 +80,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/totalAmountText"
+                    android:id="@+id/totalDeliveryChargesText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs 0.00"
@@ -98,7 +97,6 @@
                 android:paddingRight="16dp">
 
                 <TextView
-                    android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -108,7 +106,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/totalAmountText"
+                    android:id="@+id/totalTaxText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rs 0.00"
@@ -126,7 +124,6 @@
                 android:paddingRight="16dp">
 
                 <TextView
-                    android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

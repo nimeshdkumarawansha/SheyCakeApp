@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +26,8 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.orcs.sheycakeapp.R;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -41,6 +45,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) {
+            redirectToLoginPage();
+        }
 
         firebaseFirestore.collection("products")
                 .get()
@@ -65,7 +74,10 @@ public class MainActivity extends AppCompatActivity {
                                         TextView textView = view1.findViewById(R.id.textView9);
                                         textView.setText(entry.getValue().toString());
                                     }
-
+                                    if (entry.getKey().equals("qty")) {
+                                        TextView textView = view1.findViewById(R.id.textView11);
+                                        textView.setText(entry.getValue().toString());
+                                    }
                                 }
                                 linearLayoutCart.addView(view1);
                             }
@@ -73,9 +85,19 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        TextView textView3 = findViewById(R.id.textView3);
-        if (textView3 != null) {
-            textView3.setText("Welcome, " + mAuth.getCurrentUser().getEmail());
+        TextView userEmail = findViewById(R.id.textView3);
+        TextView userName = findViewById(R.id.textView2);
+        if (userEmail != null) {
+            userEmail.setText(mAuth.getCurrentUser().getEmail());
+        }
+
+        try {
+            SharedPreferences sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
+            if (userName != null) {
+                userName.setText(sharedPreferences.getString("name", ""));
+            }
+        } catch (NullPointerException e) {
+            Log.e(TAG, "No shared pref file: ", e);
         }
 
         findViewById(R.id.supportButton).setOnClickListener(new View.OnClickListener() {
@@ -102,6 +124,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.logout_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                redirectToLoginPage();
+            }
+        });
+
+    }
+
+    private void redirectToLoginPage() {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }

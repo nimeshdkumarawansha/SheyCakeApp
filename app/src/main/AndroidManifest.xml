@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,28 +17,30 @@
         tools:targetApi="31">
         <activity
             android:name=".Activity.CartListActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.ShowDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ShowDeatilsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.MainActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.ProductActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Activity.MainActivity" />
         <activity
             android:name=".Activity.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.IntroActivity"
-            android:exported="true">
+            android:exported="true"
+            android:parentActivityName=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
