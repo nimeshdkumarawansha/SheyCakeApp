@@ -17,14 +17,14 @@
            android:padding="5dp"
             />
 
-        <ImageView
-            android:id="@+id/menu_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/baseline_menu_24"
-            android:layout_alignParentRight="true"
-           android:padding="5dp"
-            />
+<!--        <ImageView-->
+<!--            android:id="@+id/menu_icon"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@drawable/baseline_menu_24"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--           android:padding="5dp"-->
+<!--            />-->
 
     </RelativeLayout>
 

@@ -24,13 +24,6 @@ public class ShowDetailsActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.menu_icon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ShowDetailsActivity.this, "Menu", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         findViewById(R.id.addToCart).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
