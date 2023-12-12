@@ -21,7 +21,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <include layout="@layout/toolbar3" />
@@ -30,8 +30,7 @@
                 android:id="@+id/titleText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
-                android:text="Title"
+                android:text="BREADTALK STAR COOKIES CAKE CHOCOLATE"
                 android:textAlignment="center"
                 android:textColor="@color/my_primary"
                 android:textSize="24sp"
@@ -50,12 +49,13 @@
             <ImageView
                 android:id="@+id/imageView5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:src="@drawable/cake1" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:paddingTop="5dp"
                 android:orientation="horizontal"
                 android:textAlignment="center">
 
@@ -85,33 +85,50 @@
                     android:src="@drawable/plus" />
             </LinearLayout>
 
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Add icing greeting to this cake"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:maxLength="30"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Weight: 1kg"
+                android:textSize="18sp"
+                android:textStyle="bold" />
             <TextView
                 android:id="@+id/descriptionText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="description"
+                android:text="The BreadTalk Star Cookies Chocolate Cake is a delectable creation that combines the rich, indulgent flavor of chocolate with the charm of star-shaped cookies. This cake is a delightful celebration of sweetness and creativity, perfect for those who appreciate the magic of chocolate in their desserts."
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/addToCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:height="40dp"
+                android:background="@drawable/btn_background"
+                android:elevation="3dp"
+                android:gravity="center"
+                android:text="Add to Cart"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
         </LinearLayout>
     </ScrollView>
-
-    <TextView
-        android:id="@+id/addToCart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Add to Cart"
-        android:height="40dp"
-        android:textColor="@color/white"
-        android:gravity="center"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        android:elevation="3dp"
-        android:background="@drawable/btn_background"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
