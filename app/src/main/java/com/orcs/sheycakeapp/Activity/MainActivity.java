@@ -74,6 +74,18 @@ public class MainActivity extends AppCompatActivity {
                                         textView.setText(entry.getValue().toString());
                                     }
                                 }
+
+                                // Set click listener to start details activity
+                                view1.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        String productId = document.getId();
+
+                                        Intent intent = new Intent(MainActivity.this, ShowDetailsActivity.class);
+                                        intent.putExtra("PRODUCT_ID", productId);
+                                        startActivity(intent);
+                                    }
+                                });
                                 linearLayoutCart.addView(view1);
                             }
                         }
