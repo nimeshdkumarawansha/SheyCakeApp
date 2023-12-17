@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser user = mAuth.getCurrentUser();
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+    String uid = mAuth.getCurrentUser().getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,18 +96,41 @@ public class MainActivity extends AppCompatActivity {
 
         TextView userEmail = findViewById(R.id.textView3);
         TextView userName = findViewById(R.id.textView2);
-        if (userEmail != null) {
-            userEmail.setText(mAuth.getCurrentUser().getEmail());
-        }
+//        if (userEmail != null) {
+//            userEmail.setText(mAuth.getCurrentUser().getEmail());
+//        }
+//
+//        try {
+//            SharedPreferences sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
+//            if (userName != null) {
+//                userName.setText(sharedPreferences.getString("name", ""));
+//            }
+//        } catch (NullPointerException e) {
+//            Log.e(TAG, "No shared pref file: ", e);
+//        }
+        firebaseFirestore.collection("users")
+                .document(uid) // Use the current user's UID as the document ID
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                String name = document.getString("name");
+                                String mobile = document.getString("mobile");
+                                String email = document.getString("email");
 
-        try {
-            SharedPreferences sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
-            if (userName != null) {
-                userName.setText(sharedPreferences.getString("name", ""));
-            }
-        } catch (NullPointerException e) {
-            Log.e(TAG, "No shared pref file: ", e);
-        }
+                                userEmail.setText(email);
+                                userName.setText(name);
+                            } else {
+                                Log.d(TAG, "No such document");
+                            }
+                        } else {
+                            Log.w(TAG, "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
         findViewById(R.id.supportButton).setOnClickListener(new View.OnClickListener() {
             @Override

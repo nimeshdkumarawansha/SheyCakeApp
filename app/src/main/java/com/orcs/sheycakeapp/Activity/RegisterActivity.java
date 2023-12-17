@@ -92,6 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 // Create a user object with the required fields
                 Map<String, Object> user = new HashMap<>();
+                user.put("uuid",userId);
                 user.put("name", name);
                 user.put("email", email);
                 user.put("mobile", mobile);
