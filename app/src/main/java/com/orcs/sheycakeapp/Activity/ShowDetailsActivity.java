@@ -32,17 +32,12 @@ public class ShowDetailsActivity extends AppCompatActivity {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
                 if (document.exists()) {
-                    // Document found, you can access the data
                     String productName = document.getString("name");
-                    // Assuming "productName" is a field in your Firestore document
-                    // You can replace it with the actual field name you want to retrieve
 
-                    // Update your TextView
                     productNameText.setText(productName);
                 } else {
                 }
             } else {
-                // Handle errors
                 Exception e = task.getException();
                 Log.i(TAG,e.toString());
             }
